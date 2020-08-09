@@ -7,9 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Contents
 
 - [Technology stack](#technology-stack)
+- [Features](#features)
 - [Development server](#development-server)
 - [Compilation](#compilation)
 - [Production](#production)
+- [Lighthouse Audit](#lighthouse-audit)
 - [Author](#author)
 
 
@@ -18,7 +20,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Node v10.17.0
 - Angular ClI v10
 
-
+### Features
+- Lazy Loading Images
+- SSR 
+- PWA
 
 ### Development server
 
@@ -36,6 +41,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ### Author
 - Updated : 10/08/2020
 - Author  : Kunal Bansal
+
+### Lighthouse Audit
+ <img src="https://i.ibb.co/1Zj7CjJ/Screen-Shot-2020-08-10-at-2-51-16-AM.png" alt="Screen-Shot-2020-08-10-at-2-51-16-AM">
 
 ## Code scaffolding
 

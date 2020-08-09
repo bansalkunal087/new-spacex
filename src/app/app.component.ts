@@ -1,6 +1,7 @@
 import { LoaderService } from './services/loader.service';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,9 @@ export class AppComponent {
   public subscription;
   public showLoader = true;
 
-  constructor(private loaderService: LoaderService){}
+  constructor(private loaderService: LoaderService){
+
+  }
 
   ngOnInit(){
 

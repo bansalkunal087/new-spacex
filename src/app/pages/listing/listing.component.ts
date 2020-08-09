@@ -3,7 +3,7 @@ import { ListingService } from './listing.service';
 import { Component, OnInit, EventEmitter, Output, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
-
+import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
@@ -12,15 +12,17 @@ import { isPlatformBrowser } from '@angular/common';
 export class ListingComponent implements OnInit {
 
   public isBrowser: boolean;
-  public programsLoading: boolean = false;
+  public programsLoading: boolean = true;
   public selectedFilters = {};
   public launchPrograms: any = [];
 
   constructor(private listingService: ListingService, private router: Router,
     private route: ActivatedRoute, @Inject(PLATFORM_ID) private platform: Object,
-    private loaderService: LoaderService) { 
+    private loaderService: LoaderService,private meta: Meta) { 
       this.isBrowser = isPlatformBrowser(platform);
-  
+      this.meta.addTags([
+        {name: 'description', content: 'Listing page for spacex programs'}
+      ]);
   }
 
   ngOnInit(): void {

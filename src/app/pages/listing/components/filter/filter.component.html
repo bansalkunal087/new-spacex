@@ -2,7 +2,7 @@
     <h2> Filters </h2>
   
     
-    <div *ngFor="let filter of filters | keyvalue" class="filter">
+    <div *ngFor="let filter of filters | keyvalue : keyDescOrder" class="filter">
         <div class="filter--heading pb-1">
             {{filter.value.name}}
         </div>

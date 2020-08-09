@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -8,11 +7,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class FilterComponent implements OnInit {
 
-  public filters = {};
+  public filters = new Map();
   @Input()
   get selectedFilters() { return this._selectedFilters; }
   set selectedFilters(value) {
-    console.log(value);
     try{
       this._selectedFilters = JSON.parse(JSON.stringify(value));
     }
@@ -23,33 +21,35 @@ export class FilterComponent implements OnInit {
   private _selectedFilters = {};
   @Output() filterSelected = new EventEmitter<any>();
   
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.createFilters();
   }
-
  
 
   createFilters() {
-    this.filters['year'] = {
-      name: 'Launch Year',
-      options: []
-    };
+   
     let startYear = 2006;
-
+    let years= []
     for (let i = 0; i < 14; i++) {
-      this.filters['year']['options'].push(startYear + i);
+      years.push(startYear + i);
     }
 
-    this.filters['launch'] = {
+    this.filters.set('year', {
+      name: 'Launch Year',
+      options: years
+    });
+
+    this.filters.set('launch', {
       name: 'Successful Launch',
       options: ['true', 'false']
-    };
-    this.filters['landing'] = {
+    });
+    this.filters.set('landing', {
       name: 'Successful Landing',
       options: ['true', 'false']
-    };
+    });
+    
   }
 
   selectFilter(key, value) {
@@ -57,5 +57,9 @@ export class FilterComponent implements OnInit {
 
     this.filterSelected.emit({[key]: value});
     
+  }
+
+  keyDescOrder = (a, b): number => {
+    return a.key > b.key ? -1 : (b.key > a.key ? 1 : 0);
   }
 }

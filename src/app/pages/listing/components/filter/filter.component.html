@@ -1,0 +1,17 @@
+<div class="w-100 filter-container px-2 py-1 bg-white">
+    <h2> Filters </h2>
+  
+    
+    <div *ngFor="let filter of filters | keyvalue" class="filter">
+        <div class="filter--heading pb-1">
+            {{filter.value.name}}
+        </div>
+        <div class="row pt-1">
+            <div [ngClass]="i%2 == 0 ? 'd-flex j-start' : 'd-flex j-end'" 
+             class="col-6 mb-3" *ngFor="let option of filter.value.options; let i= index;">
+                <div (click)="selectFilter(filter.key,option)" class="filter--pill text-uppercase text-center" 
+                [ngClass]="selectedFilters[filter.key] == option ? 'filter-selected' : ''">{{option}}</div>
+            </div>
+        </div>
+    </div>
+</div>

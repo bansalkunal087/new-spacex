@@ -1,0 +1,12 @@
+$gray-light: #f2f2f2 !default;
+$blue-light: #3250d6;
+$white: #ffffff;
+
+$theme-colors: (
+  "blue-light":  $blue-light
+);
+
+$bg-colors: (
+  "gray-light":     $gray-light,
+  "white":          $white
+);

@@ -1,0 +1,40 @@
+
+<div class="row" *ngIf="!isLoading && launchPrograms && launchPrograms.length > 0">
+    <div *ngFor="let program of launchPrograms; let i =index;" class="col-12 col-md-6 col-lg-3 p-1">
+    <div class="lp-card bg-white p-2 h-100 br-10">
+        <div class="lp-img text-center bg-gray-light">
+            <img alt="{{program.mission_name}}" *ngIf="i>=numberOfNotLazyLoadImages" [appLazyLoad] height="150" data-src="{{program.links.mission_patch_small}}" class="img-responsive h-100"/>
+            <img alt="{{program.mission_name}}" *ngIf="i<numberOfNotLazyLoadImages" height="150" data-src="{{program.links.mission_patch_small}}" class="img-responsive h-100"/>
+
+        </div>
+        <div class="lp-card-body">
+            <div class="text-blue-light lp-card-name lp-card-heading py-1">{{program.mission_name}} #{{program.flight_number}}</div>
+            <div class="my-half lp-detail-heading">Mission ids</div>
+            <ul class="my-1" *ngIf="program.mission_id">
+                <li *ngFor="let missionId of program.mission_id">{{missionId}}</li>
+            </ul>
+            <div class="d-flex a-center j-between">
+                <div class="my-half lp-detail-heading">Launch Year</div>
+                {{program.launch_year}}
+            </div>
+            <div class="d-flex a-center j-between">
+                <div class="my-half lp-detail-heading">Successful launch</div>
+                {{program.launch_success}}
+            </div>
+            <div class="d-flex a-center j-between">
+                <div class="my-half lp-detail-heading">Successful Landing</div>
+                {{program.launch_landing ? 'true' : 'false'}}
+            </div>
+            
+        </div>
+    </div>
+    </div>
+
+</div>
+
+<div class="d-flex a-center j-center full-height w-100" *ngIf="!isLoading && launchPrograms && launchPrograms.length ==0">
+    <div class="message p-2 bg-white">
+        No Programs Found.
+    </div>
+</div>
+

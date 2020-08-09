@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    box-sizing: border-box;
+}
+
+@import './sass/variable';
+
+// Utils
+@import './sass/grid';
+@import './sass/spacing';
+@import './sass/text';
+@import './sass/normalize';
+@import './sass/background';
+
+
+@import './sass/helpers';
+
+//Components
+@import './sass/spinner';
+
+body{
+    background: #f2f2f2;
+    font-size: 16px;
+}

@@ -1,0 +1,25 @@
+
+.lp-card{
+    background: white;
+}
+.lp-img{
+    height: 150px;
+}
+.lp-card-heading{
+    font-size: 18px;
+    font-weight: 700;
+}
+.lp-detail-heading{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 700px){
+    .lp-card-heading{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .lp-detail-heading{
+        font-size: 16px;
+    }
+}

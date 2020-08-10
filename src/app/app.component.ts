@@ -1,5 +1,6 @@
 import { LoaderService } from './services/loader.service';
 import { Component } from '@angular/core';
+import { delay } from 'rxjs/operators';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'space-new';
   public subscription;
-  public showLoader = true;
+  public showLoader = false;
 
   constructor(private loaderService: LoaderService){
 
@@ -21,7 +22,7 @@ export class AppComponent {
   }
 
   ngAfterViewInit(){
-    this.subscription = this.loaderService.loaderSubject
+    this.subscription = this.loaderService.loaderSubject.pipe(delay(0))
     .subscribe((value: any) => {
       this.showLoader = value.show;
     });

@@ -26,9 +26,9 @@ export class ListingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.isBrowser){
+    // if(this.isBrowser){
       this.getQueryParams();
-    }
+    // }
   }
 
   getQueryParams() {

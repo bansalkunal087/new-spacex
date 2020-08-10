@@ -43,7 +43,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Author  : Kunal Bansal
 
 ### Lighthouse Audit
- <img src="https://i.ibb.co/1Zj7CjJ/Screen-Shot-2020-08-10-at-2-51-16-AM.png" alt="Screen-Shot-2020-08-10-at-2-51-16-AM">
+ <img src="https://i.ibb.co/L99SPxF/Screen-Shot-2020-08-10-at-10-37-54-AM.png" alt="Screen-Shot-2020-08-10-at-10-37-54-AM">
 
 ## Code scaffolding
 
